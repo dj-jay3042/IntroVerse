@@ -24,6 +24,10 @@ create table tblUser
 );
 -- Insert Into Table
 Insert Into tblUser (login_id, password, first_name, last_name, email, contact_no, date_of_birth, gender, user_type, flat_no, building_name, area_name, pincode, created_date) values ('DJJay3042@', '$2y$10$7jX4q0rEOhLZ7y0uwMDMluA/wiIdLLeoE6YyWd0n5fsQ7Ak5vvR7m', 'Jay', 'Chauhan', 'cjay3042002@gmail.com', '9313440532', '2002-04-30', 'Male', 1, '1', 'Global Residency', 'Adajan', 395009, '2022-09-19');
+
+ALTER TABLE tblUser CHANGE COLUMN is_deleted is_deleted tinyint(1) NOT NULL DEFAULT 0;
+
+
 -- Table
 +---------+----------+--------------------------------------------------------------+------------+-----------+-----------------------+------------+---------------+--------+-----------+---------+------------------+-----------+---------+--------------+------------+--------------+
 | user_id | login_id | password                                                     | first_name | last_name | email                 | contact_no | date_of_birth | gender | user_type | flat_no | building_name    | area_name | pincode | created_date | is_deleted | updated_date |
@@ -40,7 +44,7 @@ create table tblSubscription
     s_price decimal(10,2) not null
 );
 -- Insert Into Table
-Insert Into tblSubscription (s_type, s_price) values ('admin', '0.00');
+Insert Into tblSubscription (s_type, s_price) values ('primium', '1000.00');
 
 /*Country Table*/
 -- Create table
@@ -87,3 +91,78 @@ create table tblPincode
 );
 -- Insert Into Table
 Insert Into tblPincode (pincode, d_id, taluka_name) values (395009, 1, 'Choriyasi');
+
+
+/*Song Table*/
+-- Create table
+create table tblSong
+(
+    s_id int primary key AUTO_INCREMENT,
+    s_title varchar(100) not null,
+    s_singer varchar(500) not null,
+    s_composer varchar(500) not null,
+    s_location varchar(500) not null,
+    upload_date date not null
+);
+insert into tblSong (s_title,s_singer,s_composer,s_location,upload_date) values ('Example','Example','Example','Example','2022-09-26');
+
+/*Movie Table*/
+-- Create table
+create table tblMovie
+(
+    m_id int primary key AUTO_INCREMENT,
+    m_title varchar(100) not null,
+    m_actor varchar(500) not null,
+    m_director varchar(500) not null,
+    m_location varchar(500) not null,
+    upload_date date not null
+);
+insert into tblMovie (m_title,m_actor,m_director,m_location,upload_date) values ('Example_Movie','Example_Movie','Example_Movie','Example_Movie','2022-09-26');
+
+
+/*Book Table*/
+-- Create table
+create table tblBook
+(
+    b_id int primary key AUTO_INCREMENT,
+    b_title varchar(100) not null,
+    b_author varchar(500) not null,
+    b_publisher varchar(500) not null,
+    b_location varchar(500) not null,
+    upload_date date not null
+);
+insert into tblBook (b_title,b_author,b_publisher,b_location,upload_date) values ('Example_Book','Example_Book','Example_Book','Example_Book','2022-09-26');
+
+
+/*Book Table*/
+-- Create table
+create table tblGenre
+(
+    g_id int primary key AUTO_INCREMENT,
+    g_title varchar(100) not null,
+    g_type varchar(10) not null
+);
+insert into tblGenre (g_title,g_type) values ('Blues Music','song');
+insert into tblGenre (g_title,g_type) values ('Jazz Music','song');
+insert into tblGenre (g_title,g_type) values ('Rhythm and Blues Music','song'); 
+insert into tblGenre (g_title,g_type) values ('Rock and Roll Music','song');
+insert into tblGenre (g_title,g_type) values ('Rock Music','song');
+insert into tblGenre (g_title,g_type) values ('Country Music','song');
+insert into tblGenre (g_title,g_type) values ('Soul Music','song');
+insert into tblGenre (g_title,g_type) values ('Dance Music','song');
+insert into tblGenre (g_title,g_type) values ('Action','movie');
+insert into tblGenre (g_title,g_type) values ('Comedy','movie');
+insert into tblGenre (g_title,g_type) values ('Drama','movie');
+insert into tblGenre (g_title,g_type) values ('Fantasy','movie');
+insert into tblGenre (g_title,g_type) values ('Horror','movie');
+insert into tblGenre (g_title,g_type) values ('Mystery','movie');
+insert into tblGenre (g_title,g_type) values ('Romance','movie');
+insert into tblGenre (g_title,g_type) values ('Thriller','movie');
+insert into tblGenre (g_title,g_type) values ('Classics','book');
+insert into tblGenre (g_title,g_type) values ('Tragedy','book');
+insert into tblGenre (g_title,g_type) values ('Sci-Fi','book');
+insert into tblGenre (g_title,g_type) values ('Fantasy','book');
+insert into tblGenre (g_title,g_type) values ('Action and Adventure','book');
+insert into tblGenre (g_title,g_type) values ('Crime and Mystery','book');
+insert into tblGenre (g_title,g_type) values ('Romance','book');
+insert into tblGenre (g_title,g_type) values ('Humor and Satire','book');

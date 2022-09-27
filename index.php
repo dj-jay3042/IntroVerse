@@ -41,6 +41,7 @@
 						<li><a href="service.php">services</a></li>
 						<!-- <li><a href="portfolio.php">portfolio</a></li> --> 
 						<li><a href="contact.php">contact</a></li>
+						<li><a href="./Login/login.php">Log In</a></li>
 					</ul> <!-- /.nav -->
 			    </div><!-- /.navbar-collapse -->
 		  	</div><!-- /.container -->
@@ -109,7 +110,5 @@
     <script src="assets/js/contact.js"></script>
 	<!-- // <script src="assets/js/smoothscroll.js"></script> -->
 	<script src="assets/js/script.js"></script>
-
-
 </body>
 </html>

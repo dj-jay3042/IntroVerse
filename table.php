@@ -151,3 +151,8 @@
     ?>
 </body>
 </html>
+<?php
+  }
+  else
+    header("Location: ../../Login/login.php");
+?>
